@@ -1,0 +1,133 @@
+*{
+    overflow-x: hidden;
+    color: white;
+    /* font-family: 'Press Start 2P';
+    font-size: 15px; */
+}
+a:link { text-decoration:none; }
+a:visited { text-decoration:none; }
+
+body{
+    background: linear-gradient(90deg, rgb(3, 1, 35) 0%, rgb(18, 18, 38) 35%, rgb(30, 31, 31) 100%);
+}
+
+main{
+  margin-top: 80px;
+}
+
+.yo{
+  margin: 5px;
+  border-radius:  50%;
+}
+
+#writemachinge{
+    display: block;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 2px solid;
+    width: 16ch;
+
+    animation: typing 2s steps(16), blink .5s infinite step-end alternate;
+
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {border-color: transparent;}
+}
+
+.centrado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*Gallery*/
+.swiper{
+  position: relative;
+  height: 100%;
+  padding: 80px 0 50px 0;
+}
+
+.swiper-slide{
+  overflow: hidden;
+  width: 600px;
+  height: 370px;
+  border-radius: 20px;
+  background: rgb(76, 76, 76);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+}
+
+.icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+/*
+.icons i {
+  font-size: 20px;
+  color: #ffb900;
+}*/
+
+.icons img {
+  width: 90px;
+  border-radius: 20px;
+}
+
+.icons span{
+  font-size: 25px;
+  color: violet;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.product-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-txt{
+  flex-basis: 50%;
+  text-align: left;
+}
+.product-txt h3{
+  overflow: hidden;
+  font-size: 20px;
+  color: #fff;
+  /* text-transform: uppercase; */
+}
+
+.product-txt p{
+  margin-left: 30px;
+  font-size: 14px;
+  color: #c4c4c4;
+}
+
+.product-img{
+  flex-basis: 50%;
+  text-align: right;
+}
+.product-img img{
+  height: 130px;
+}
+
+.btn-1{
+  display: inline-block;
+  padding: 5px 25px;
+  border: 1px solid violet;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-top: 40px;
+}

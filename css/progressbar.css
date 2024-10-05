@@ -1,0 +1,94 @@
+.progressbar-cont{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skills{
+    margin-left: 10px;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    position: relative;
+}
+.outer{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    padding: 19.3px;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+.inner{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+                inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+                -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+                0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+                0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+.numberPB{
+    font-size: 16px;
+    color: #d5d5d5;
+}
+
+circle{
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+}
+
+svg{
+    position: absolute;
+    top: 19.5px;
+    left: 19.5px;
+}
+
+#circleJS{
+    animation: javascript 2s linear forwards;
+}
+
+#circleJava{
+    animation: java 2s linear forwards;
+}
+
+#circleCS{
+    animation: cs 2s linear forwards;
+}
+
+#circleKotlin{
+    animation: kotlin 2s linear forwards;
+}
+
+@keyframes javascript {
+    100%{
+        stroke-dashoffset: 165;
+    }
+}
+
+@keyframes java {
+    100%{
+        stroke-dashoffset: 354;
+    }
+}
+
+@keyframes cs {
+    100%{
+        stroke-dashoffset: 141;
+    }
+}
+
+@keyframes kotlin {
+    100%{
+        stroke-dashoffset: 259;
+    }
+}

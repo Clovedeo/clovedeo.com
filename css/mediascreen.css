@@ -1,0 +1,479 @@
+@media screen and (max-width: 1199.20px){
+    /* Proyectos */
+    .product-img img{
+      height: 100px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    /* Presentación */
+    .yo{
+        height: 250px;
+        width: 250px;
+    }
+
+    /* Skills */
+    .skills{
+        height: 180px;
+        width: 180px;
+    }
+    .outer{
+        height: 140px;
+        width: 140px;
+    }
+    .inner{
+        height: 100px;
+        width: 100px;
+    }
+    svg{
+        height: 140px;
+        width: 140px;   
+    }
+    circle{
+        stroke-dasharray: 375;
+        stroke-dashoffset: 375;
+    }
+    .numberPB{
+        font-size: 10px;
+    }
+    /* Animación de círculo */
+    @keyframes javascript {
+        100%{
+            stroke-dashoffset: 131;
+        }
+    }
+
+    @keyframes java {
+        100%{
+            stroke-dashoffset: 281;
+        }
+    }
+
+    @keyframes cs {
+        100%{
+            stroke-dashoffset: 112;
+        }
+    }
+
+    @keyframes kotlin {
+        100%{
+            stroke-dashoffset: 262;
+        }
+    }
+
+    /* Proyectos */
+    .btn-1{
+        margin-top: 20px;
+    }
+    .product-img img{
+      height: 70px;
+    }
+}
+
+@media screen and (max-width: 767.20px) {
+    /* Presentación */
+    .yo{
+        height: 220px;
+        width: 220px;
+    }
+    /* Skills */
+    .skills{
+        height: 130px;
+        width: 130px;
+        padding: 10px;
+    }
+    .outer{
+        height: 110px;
+        width: 110px;
+    }
+    .inner{
+        height: 70px;
+        width: 70px;
+    }
+    svg{
+        height: 130px;
+        width: 130px;
+        top: 0;
+        left: 0;
+    }
+    circle{
+        stroke-dasharray: 283;
+        stroke-dashoffset: 283;
+    }
+    .numberPB{
+        font-size: 10px;
+    }
+    /* Animación de círculo */
+    @keyframes javascript {
+        100%{
+            stroke-dashoffset: 99;
+        }
+    }
+
+    @keyframes java {
+        100%{
+            stroke-dashoffset: 212;
+        }
+    }
+
+    @keyframes cs {
+        100%{
+            stroke-dashoffset: 85   ;
+        }
+    }
+
+    @keyframes kotlin {
+        100%{
+            stroke-dashoffset: 198;
+        }
+    }
+    
+    /* Proyectos */
+    .swiper{
+        padding: 30px 0 40px 0;
+    }
+    .product-txt p{
+        margin-left: 17px;
+    }
+    .product-img img{
+      height: 50px;
+    }
+    .icons img {
+        width: 80px;
+    }
+    .icons span{
+        font-size: 23px;
+    }
+
+    
+}
+
+@media screen and (max-width: 603.40px){
+    /* Footer */
+    .pie-pagina{
+        font-size: 80%;
+    }
+    .pie-pagina .grupo-1 .box figure img{
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 572.40px){
+    /* Footer */
+    .pie-pagina .grupo-1 .box figure img{
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 562.40px) {
+    /* Presentación */
+    .yo{
+        height: 170px;
+        width: 170px;
+    }
+
+    /* Skills */
+    .skills{
+        height: 100px;
+        width: 100px;
+        padding: 10px;
+    }
+    .outer{
+        height: 80px;
+        width: 80px;
+        padding: 9.5px;
+    }
+    .inner{
+        height: 60px;
+        width: 60px;
+    }
+    svg{
+        height: 90px;
+        width: 90px;
+        top: 0;
+        left: 0;
+    }
+    circle{
+        stroke-width: 10px;
+        stroke-dasharray: 225;
+        stroke-dashoffset: 225;
+    }
+    .numberPB{
+        font-size: 7px;
+    }
+    /* Animación de círculo */
+    @keyframes javascript {
+        100%{
+            stroke-dashoffset: 79;
+        }
+    }
+
+    @keyframes java {
+        100%{
+            stroke-dashoffset: 169;
+        }
+    }
+
+    @keyframes cs {
+        100%{
+            stroke-dashoffset: 67;
+        }
+    }
+
+    @keyframes kotlin {
+        100%{
+            stroke-dashoffset: 157;
+        }
+    }
+
+    /* Proyectos */
+    .icons img {
+        width: 70px;
+    }
+    .icons span{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 555.20px){
+    /* Proyectos */
+    .swiper{
+        padding: 20px 0 30px 0;
+    }
+    .product-txt p{
+        margin-left: 14px;
+        font-size: 12px;
+    }
+    .product-img {
+      height: 0px;
+    }
+    .product-img img{
+      height: 0px;
+    }
+    .icons img {
+        width: 60px;
+    }
+    .icons span{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 535.20px){
+    /* Proyectos */
+    .swiper{
+        padding: 20px 0 30px 0;
+    }
+    .product-txt p{
+        margin-left: 14px;
+        font-size: 12px;
+        height: 140px;
+    }
+    .product-img {
+      height: 0px;
+    }
+    .product-img img{
+      height: 0px;
+    }
+    .icons img {
+        width: 60px;
+    }
+    .icons span{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 510px){
+    /* Footer */
+    .pie-pagina{
+        font-size: 70%;
+    }
+
+    .pie-pagina .grupo-1 .box h2{
+        font-size: 96%;
+    }
+    .pie-pagina .grupo-1 .box figure img{
+        width: 100px;
+        height: 100px;
+    }
+    .pie-pagina .grupo-1 .red-social a{
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media screen and (max-width: 470.20px){
+    /* Proyectos */
+    .swiper{
+        padding: 20px 0 30px 0;
+        height: 30%;
+    }
+    .swiper-slide{
+        height: 314;
+    }
+    .product-txt p{
+        margin-left: 14px;
+        font-size: 10px;
+        height: 110px;
+    }
+    .product-img {
+      height: 0px;
+    }
+    .product-img img{
+      height: 0px;
+    }
+    .icons img {
+        width: 60px;
+    }
+    .icons span{
+        font-size: 18px;
+    }
+    .btn-1{
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    /* Footer */
+    .pie-pagina{
+        font-size: 70%;
+    }
+
+    .pie-pagina .grupo-1{
+        margin: 0 30px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pie-pagina .grupo-1 .box h2{
+        font-size: 96%;
+    }
+    .pie-pagina .grupo-1 .box figure img{
+        width: 100px;
+        height: 100px;
+    }
+    .pie-pagina .grupo-1 .red-social a{
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media screen and (max-width: 444px){
+    /* Footer */
+    .pie-pagina{
+        font-size: 70%;
+    }
+
+    .pie-pagina .grupo-1{
+        margin: 0 30px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pie-pagina .grupo-1 .box h2{
+        font-size: 96%;
+    }
+    .pie-pagina .grupo-1 .box figure img{
+        width: 80px;
+        height: 80px;
+    }
+    .pie-pagina .grupo-1 .red-social a{
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media screen and (max-width: 438.40px) {
+    /* Presentación */
+    .yo{
+        height: 100px;
+        width: 100px;
+    }
+    #presentacion{
+        font-size: 10px;
+    }
+
+    /* Skills */
+    .skills{
+        height: 80px;
+        width: 80px;
+        padding: 10px;
+    }
+    .outer{
+        height: 60px;
+        width: 60px;
+        padding: 9.5px;
+    }
+    .inner{
+        height: 40px;
+        width: 40px;
+    }
+    svg{
+        height: 80px;
+        width: 80px;
+        top: 0;
+        left: 0;
+    }
+    circle{
+        stroke-width: 10px;
+        stroke-dasharray: 162;
+        stroke-dashoffset: 162;
+    }
+    .numberPB{
+        font-size: 6px;
+    }
+    /* Animación de círculo */
+    @keyframes javascript {
+        100%{
+            stroke-dashoffset: 57;
+        }
+    }
+
+    @keyframes java {
+        100%{
+            stroke-dashoffset: 121;
+        }
+    }
+
+    @keyframes cs {
+        100%{
+            stroke-dashoffset: 49;
+        }
+    }
+
+    @keyframes kotlin {
+        100%{
+            stroke-dashoffset: 113;
+        }
+    }
+
+    /* Proyectos */
+    .swiper{
+        padding: 20px 0 30px 0;
+        height: 30%;
+    }
+    .swiper-slide{
+        height: 30%;
+    }
+    .product-txt p{
+        margin-left: 10px;
+        font-size: 9px;
+        height: 110px;
+    }
+    .product-img {
+      height: 0px;
+    }
+    .product-img img{
+      height: 0px;
+    }
+    .icons img {
+        width: 40px;
+        border-radius: 7px;
+    }
+    .icons span{
+        font-size: 15px;
+    }
+    .btn-1{
+        margin-top: 0;
+    }
+
+}
