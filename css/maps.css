@@ -2,3 +2,17 @@
     height: 700px; 
     z-index: 1; 
 }
+
+.tachado {
+    color: red;
+    text-decoration: line-through;
+}
+
+a:link {
+    text-decoration: none;
+}
+nav ul {
+    height: 89%;
+    width: 350px;
+    overflow:overlay;
+}

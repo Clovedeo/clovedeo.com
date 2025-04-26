@@ -8,44 +8,10 @@
   <link rel="icon" href="../img/icons/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <link rel="stylesheet" type="text/css" href="../css/mediascreenMapa.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   
   <link rel="stylesheet" type="text/css" href="../css/pieDePagina.css">
-  <style>
-    @media screen and (max-width: 1199.20px){
-      /* Proyectos */
-      .container{
-        width: 1000px;
-      }
-      nav ul{
-        width: auto;
-      }
-    }
-    @media screen and (max-width: 1000px){
-      /* Proyectos */
-      .container{
-        width: 1020px;
-      }
-    }
-    @media screen and (max-width: 600px){
-      /* Proyectos */
-      .container{
-        width: 540px;
-      }
-    }
-    @media screen and (max-width: 540px){
-      /* Proyectos */
-      .container{
-        width: 450px;
-      }
-    }
-    @media screen and (max-width: 450px){
-      /* Proyectos */
-      .container{
-        width: 370px;
-      }
-    }
-  </style>
   <link rel="stylesheet" type="text/css" href="../css/encabezadoMaps.css">
   
   <!-- leaf map css-->
@@ -70,18 +36,22 @@
     </div>
 
     <ul>
+      <li><span id="rVisible">Mostrar Todas Las Rutas</span></li>
+      <li><span id="rHidden">Ocultar Todas Las Rutas</span></li>
       <li><span id="rb">Ruta del Bienestar</span></li>
-      <li><span id="r2">Ruta 2</span></li>
-      <li><span id="r7">Ruta 7</span></li>
-      <li><span id="r8">Ruta 8</span></li>
-      <li><span id="r12">Ruta 12</span></li>
-      <li><span id="r14">Ruta 14</span></li>
-      <li><span id="r16">Ruta 16</span></li>
-      <li><span id="r17">Ruta 17</span></li>
-      <li><span id="r18">Ruta 18</span></li>
-      <li><span id="r20">Ruta 20</span></li>
-      <li><span id="r22">Ruta 22</span></li>
-      <li><span id="r23">Ruta 23</span></li>
+      <li><span id="r2">Ruta San Luisito (2)</span></li>
+      <li><span id="r7">Ruta Modelo (7)</span></li>
+      <li><span id="r8">Ruta UAT - Torre Nueva (8)</span></li>
+      <li><span id="r10">Ruta UAT - Treviño (10)</span></li>
+      <li><span id="r12">Ruta Col. México (12)</span></li>
+      <li><span id="r14">Ruta Echeverría (14)</span></li>
+      <!-- <li><span id="r16">Ruta 16</span></li> -->
+      <li><span id="r17">Ruta Libertad - Playas (17)</span></li>
+      <li><span id="r18">Ruta San Marcos (18)</span></li>
+      <li><span id="r20">Ruta Libertad (20)</span></li>
+      <li><span id="r22">Ruta Palmas (22)</span></li>
+      <li><span id="r23">Ruta Corregidora (23)</span></li>
+      <li><span id="r26">Ruta Simón Torres (26)</span></li>
     </ul>
   </nav>
 
@@ -210,10 +180,11 @@
     const db = getDatabase()
 
     try{
-      const distanceRef = ref(db, 'rutasweb')
+      const distanceRef = ref(db, 'rutas')
       onValue(distanceRef, (snapshot) => {
         data = snapshot.val()
         
+        // console.log(data)
         //cargarMapa(data.root)
         cargarRutas()
       })
@@ -224,67 +195,73 @@
 
     function cargarRutas(){
 
-      let arrajson = data.root.features
-
-      arrajson.forEach(element => {
+      let arrajson = data
+      
+      for(let element of Object.keys(data)){
+        let arrjson = data[element]
+        
+        let color = arrjson.color
         let coordinates = []
-
-        element.geometry.coordinates.forEach(arr => {
-          //console.log(arr)
-          let point = new L.LatLng(arr[1], arr[0])
+        arrjson.coordinates.forEach(coord => {
+          let point = new L.LatLng(coord[1], coord[0])
           coordinates.push(point)
-        }) 
-        let color = element.properties.color
+        })
 
         try {
-          switch(element.id){
+          switch(arrjson.id){
           case '01':
           polyRB = L.polyline(coordinates, {color: color}).addTo(mapJS);
           boolRB = true
             break;
           case '02':
-          poly8 = L.polyline(coordinates, {color: color}).addTo(mapJS);
-          bool8 = true
+          poly2 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool2 = true
             break;
           case '03':
           poly7 = L.polyline(coordinates, {color: color}).addTo(mapJS);
           bool7 = true
             break;
           case '04':
-          poly23 = L.polyline(coordinates, {color: color}).addTo(mapJS);
-          bool23 = true
+          poly8 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool8 = true
             break;
           case '05':
-          poly22 = L.polyline(coordinates, {color: color}).addTo(mapJS);
-          bool22 = true
+          poly10 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool10 = true
             break;
           case '06':
-          poly20 = L.polyline(coordinates, {color: color}).addTo(mapJS);
-          bool20 = true
+          poly12 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool12 = true
             break;
           case '07':
-          poly2 = L.polyline(coordinates, {color: color}).addTo(mapJS);
-          bool2 = true
-            break;
-          case '08':
-          poly18 = L.polyline(coordinates, {color: color}).addTo(mapJS);
-          bool18 = true
-            break;
-          case '09':
-          poly17 = L.polyline(coordinates, {color: color}).addTo(mapJS);
-          bool17 = true
-            break;
-          case '10':
-          poly16 = L.polyline(coordinates, {color: color}).addTo(mapJS);
-          bool16 = true
-            break;
-          case '11':
           poly14 = L.polyline(coordinates, {color: color}).addTo(mapJS);
           bool14 = true
             break;
+          case '08':
+          poly17 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool17 = true
+            break;
+          case '09':
+          poly18 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool18 = true
+            break;
+          case '10':
+          poly20 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool20 = true
+          // poly16 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          // bool16 = true
+            break;
+          case '11':
+          poly22 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool22 = true
+            break;
           case '12':
-          poly12 = L.polyline(coordinates, {color: color}).addTo(mapJS);
-          bool12 = true
+          poly23 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool23 = true
+            break;
+          case '13':
+          poly26 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool26 = true
             break;
           default:
             break;
@@ -293,7 +270,7 @@
           console.error(error);
         }
 
-      });
+      }
     }
     
 
@@ -306,112 +283,283 @@
     }
 
     // EventClicks
+    // Todas las Rutas
+    $('#rVisible').on('click',() => {
+      // Ruta del Bienestar
+      $('#rb').removeClass("tachado")
+      mapJS.addLayer(polyRB)
+      boolRB = true
+      // Ruta 2 - San Luisito
+      $('#r2').removeClass("tachado")
+      mapJS.addLayer(poly2)
+      bool2 = true
+      // Ruta 7 - Modelo
+      $('#r7').removeClass("tachado")
+      mapJS.addLayer(poly7)
+      bool7 = true
+      // Ruta 8 UAT - Torre Nueva
+      $('#r8').removeClass("tachado")
+      mapJS.addLayer(poly8)
+      bool8 = true
+      // Ruta 10 UAT - Treviño
+      $('#r10').removeClass("tachado")
+      mapJS.addLayer(poly10)
+      bool10 = true
+      // Ruta 12 Col. México
+      $('#r12').removeClass("tachado")
+      mapJS.addLayer(poly12)
+      bool12 = true
+      // Ruta 14 Echeverría
+      $('#r14').removeClass("tachado")
+      mapJS.addLayer(poly14)
+      bool14 = true
+      // Ruta 17 Libertad - Playas
+      $('#r17').removeClass("tachado")
+      mapJS.addLayer(poly17)
+      bool17 = true
+      // Ruta 18 San Marcos
+      $('#r18').removeClass("tachado")
+      mapJS.addLayer(poly18)
+      bool18 = true
+      // Ruta 20 Libertad
+      $('#r20').removeClass("tachado")
+      mapJS.addLayer(poly20)
+      bool20 = true
+      // Ruta 22 Palmas
+      $('#r22').removeClass("tachado")
+      mapJS.addLayer(poly22)
+      bool22 = true
+      // Ruta 23 Corregidora - Framboyanes
+      $('#r23').removeClass("tachado")
+      mapJS.addLayer(poly23)
+      bool23 = true
+      // Ruta 26 Simón Torres
+      $('#r26').removeClass("tachado")
+      mapJS.addLayer(poly26)
+      bool26 = true
+      
+    })
+    $('#rHidden').on('click',() => {
+      // Ruta del Bienestar
+      $('#rb').addClass("tachado")
+      mapJS.removeLayer(polyRB)
+      boolRB = false
+      // Ruta 2 - San Luisito
+      $('#r2').addClass("tachado")
+      mapJS.removeLayer(poly2)
+      bool2 = false
+      // Ruta 7 - Modelo
+      $('#r7').addClass("tachado")
+      mapJS.removeLayer(poly7)
+      bool7 = false
+      // Ruta 8 UAT - Torre Nueva
+      $('#r8').addClass("tachado")
+      mapJS.removeLayer(poly8)
+      bool8 = false
+      // Ruta 10 UAT - Treviño
+      $('#r10').addClass("tachado")
+      mapJS.removeLayer(poly10)
+      bool10 = false
+      // Ruta 12 Col. México
+      $('#r12').addClass("tachado")
+      mapJS.removeLayer(poly12)
+      bool12 = false
+      // Ruta 14 Echeverría
+      $('#r14').addClass("tachado")
+      mapJS.removeLayer(poly14)
+      bool14 = false
+      // Ruta 17 Libertad - Playas
+      $('#r17').addClass("tachado")
+      mapJS.removeLayer(poly17)
+      bool17 = false
+      // Ruta 18 San Marcos
+      $('#r18').addClass("tachado")
+      mapJS.removeLayer(poly18)
+      bool18 = false
+      // Ruta 20 Libertad
+      $('#r20').addClass("tachado")
+      mapJS.removeLayer(poly20)
+      bool20 = false
+      // Ruta 22 Palmas
+      $('#r22').addClass("tachado")
+      mapJS.removeLayer(poly22)
+      bool22 = false
+      // Ruta 23 Corregidora - Framboyanes
+      $('#r23').addClass("tachado")
+      mapJS.removeLayer(poly23)
+      bool23 = false
+      // Ruta 26 Simón Torres
+      $('#r26').addClass("tachado")
+      mapJS.removeLayer(poly26)
+      bool26 = false
+    })
+    /*
+
+          if(bool7){
+        $('#r7').addClass("tachado")
+        mapJS.removeLayer(poly7)
+        bool7 = false
+      } else{
+        $('#r7').removeClass("tachado")
+        mapJS.addLayer(poly7)
+        bool7 = true
+      }
+
+    */
+
+    // Rutas Individuales
     $('#rb').on('click',() => {
       if(boolRB){
+        $('#rb').addClass("tachado")
         mapJS.removeLayer(polyRB)
         boolRB = !boolRB
       } else{
+        $('#rb').removeClass("tachado")
         mapJS.addLayer(polyRB)
         boolRB = !boolRB
       }
     })
     $('#r2').on('click',() => {
       if(bool2){
+        $('#r2').addClass("tachado")
         mapJS.removeLayer(poly2)
         bool2 = !bool2
       } else{
+        $('#r2').removeClass("tachado")
         mapJS.addLayer(poly2)
         bool2 = !bool2
       }
     })
     $('#r7').on('click',() => {
       if(bool7){
+        $('#r7').addClass("tachado")
         mapJS.removeLayer(poly7)
         bool7 = !bool7
       } else{
+        $('#r7').removeClass("tachado")
         mapJS.addLayer(poly7)
         bool7 = !bool7
       }
     })
     $('#r8').on('click',() => {
       if(bool8){
+        $('#r8').addClass("tachado")
         mapJS.removeLayer(poly8)
         bool8 = !bool8
       } else{
+        $('#r8').removeClass("tachado")
         mapJS.addLayer(poly8)
         bool8 = !bool8
       }
     })
+    $('#r10').on('click',() => {
+      if(bool10){
+        $('#r10').addClass("tachado")
+        mapJS.removeLayer(poly10)
+        bool10 = !bool10
+      } else{
+        $('#r10').removeClass("tachado")
+        mapJS.addLayer(poly10)
+        bool10 = !bool10
+      }
+    })
     $('#r12').on('click',() => {
       if(bool12){
+        $('#r12').addClass("tachado")
         mapJS.removeLayer(poly12)
         bool12 = !bool12
       } else{
+        $('#r12').removeClass("tachado")
         mapJS.addLayer(poly12)
         bool12 = !bool12
       }
     })
     $('#r14').on('click',() => {
       if(bool14){
+        $('#r14').addClass("tachado")
         mapJS.removeLayer(poly14)
         bool14 = !bool14
       } else{
+        $('#r14').removeClass("tachado")
         mapJS.addLayer(poly14)
         bool14 = !bool14
       }
     })
     $('#r16').on('click',() => {
       if(bool16){
+        $('#r16').addClass("tachado")
         mapJS.removeLayer(poly16)
         bool16 = !bool16
       } else{
+        $('#r16').removeClass("tachado")
         mapJS.addLayer(poly16)
         bool16 = !bool16
       }
     })
     $('#r17').on('click',() => {
       if(bool17){
+        $('#r17').addClass("tachado")
         mapJS.removeLayer(poly17)
         bool17 = !bool17
       } else{
+        $('#r17').removeClass("tachado")
         mapJS.addLayer(poly17)
         bool17 = !bool17
       }
     })
     $('#r18').on('click',() => {
       if(bool18){
+        $('#r18').addClass("tachado")
         mapJS.removeLayer(poly18)
         bool18 = !bool18
       } else{
+        $('#r18').removeClass("tachado")
         mapJS.addLayer(poly18)
         bool18 = !bool18
       }
     })
     $('#r20').on('click',() => {
       if(bool20){
+        $('#r20').addClass("tachado")
         mapJS.removeLayer(poly20)
         bool20 = !bool20
       } else{
+        $('#r20').removeClass("tachado")
         mapJS.addLayer(poly20)
         bool20 = !bool20
       }
     })
     $('#r22').on('click',() => {
       if(bool22){
+        $('#r22').addClass("tachado")
         mapJS.removeLayer(poly22)
         bool22 = !bool22
       } else{
+        $('#r22').removeClass("tachado")
         mapJS.addLayer(poly22)
         bool22 = !bool22
       }
     })
     $('#r23').on('click',() => {
       if(bool23){
+        $('#r23').addClass("tachado")
         mapJS.removeLayer(poly23)
         bool23 = !bool23
       } else{
+        $('#r23').removeClass("tachado")
         mapJS.addLayer(poly23)
         bool23 = !bool23
+      }
+    })
+    $('#r26').on('click',() => {
+      if(bool26){
+        $('#r26').addClass("tachado")
+        mapJS.removeLayer(poly26)
+        bool26 = !bool26
+      } else{
+        $('#r26').removeClass("tachado")
+        mapJS.addLayer(poly26)
+        bool26 = !bool26
       }
     })
   </script>

@@ -1,0 +1,128 @@
+
+@media screen and (max-width: 603.40px){
+    /*Menu*/
+    .listaRutas {
+        height: 89%;
+    }
+    /* Footer */
+    .pie-pagina{
+        font-size: 80%;
+    }
+
+    .pie-pagina div.grupo-1{
+        margin: 0 30px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pie-pagina div.grupo-1 div.box h2{
+        font-size: 96%;
+    }
+    .pie-pagina .grupo-1 .box figure a img{
+        width: 110px;
+        height: 110px;
+    }
+    .pie-pagina .grupo-1 .box .red-social a{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 572.40px){
+    /*Menu*/
+    .listaRutas {
+        height: 89%;
+    }
+    /* Footer */
+    .pie-pagina .grupo-1 .box figure a img{
+        width: 110px;
+        height: 110px;
+    }
+}
+
+
+@media screen and (max-width: 510px){
+    /*Menu*/
+    .listaRutas {
+        height: 89%;
+    }
+    /* Footer */
+    .pie-pagina{
+        font-size: 70%;
+    }
+
+    .pie-pagina div.grupo-1{
+        margin: 0 30px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pie-pagina .grupo-1 div.box h2{
+        font-size: 96%;
+    }
+    .pie-pagina .grupo-1 .box figure a img{
+        width: 100px;
+        height: 100px;
+    }
+    .pie-pagina .grupo-1 .box .red-social a{
+        width: 44px;
+        height: 44px;
+    }
+}
+
+
+@media screen and (max-width: 450px){
+    /*Menu*/
+    .listaRutas {
+        height: 89%;
+    }
+    
+    /* Footer */
+    .pie-pagina{
+        font-size: 70%;
+    }
+
+    .pie-pagina div.grupo-1{
+        margin: 0 30px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pie-pagina .grupo-1 div.box h2{
+        font-size: 96%;
+    }
+    .pie-pagina .grupo-1 .box figure a img{
+        width: 100px;
+        height: 100px;
+    }
+    .pie-pagina .grupo-1 .box .red-social a{
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media screen and (max-width: 444px){
+    /*Menu*/
+    .listaRutas {
+        height: 90%;
+    }
+    
+    /* Footer */
+    .pie-pagina{
+        font-size: 70%;
+    }
+
+    .pie-pagina div.grupo-1{
+        margin: 0 30px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pie-pagina .grupo-1 div.box h2{
+        font-size: 96%;
+    }
+    .pie-pagina .grupo-1 .box figure a img{
+        width: 80px;
+        height: 80px;
+    }
+    .pie-pagina .grupo-1 .box .red-social a{
+        width: 44px;
+        height: 44px;
+    }
+}
