@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>Manuel Obregón - Portafolio</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <link rel="icon" href="../img/icons/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+  <link rel="stylesheet" type="text/css" href="../css/pieDePagina.css">
+  <style>
+    @media screen and (max-width: 1199.20px){
+      /* Proyectos */
+      .container{
+        width: 1000px;
+      }
+      nav ul{
+        width: auto;
+      }
+    }
+    @media screen and (max-width: 1000px){
+      /* Proyectos */
+      .container{
+        width: 1020px;
+      }
+    }
+    @media screen and (max-width: 600px){
+      /* Proyectos */
+      .container{
+        width: 540px;
+      }
+    }
+    @media screen and (max-width: 540px){
+      /* Proyectos */
+      .container{
+        width: 450px;
+      }
+    }
+    @media screen and (max-width: 450px){
+      /* Proyectos */
+      .container{
+        width: 370px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="../css/encabezadoMaps.css">
+  
+  <!-- leaf map css-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  <link rel="stylesheet" type="text/css" href="../css/maps.css">
+</head>
+
+<body>
+
+  <nav>
+    <input type="checkbox" name="" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <div class="logo-enlace">
+      <a href="../index.html" class="enlace">
+        <img src="../img/icons/logo.svg" class="logo" alt="">
+      </a>
+    </div>
+
+    <ul>
+      <li><span id="rb">Ruta del Bienestar</span></li>
+      <li><span id="r2">Ruta 2</span></li>
+      <li><span id="r7">Ruta 7</span></li>
+      <li><span id="r8">Ruta 8</span></li>
+      <li><span id="r12">Ruta 12</span></li>
+      <li><span id="r14">Ruta 14</span></li>
+      <li><span id="r16">Ruta 16</span></li>
+      <li><span id="r17">Ruta 17</span></li>
+      <li><span id="r18">Ruta 18</span></li>
+      <li><span id="r20">Ruta 20</span></li>
+      <li><span id="r22">Ruta 22</span></li>
+      <li><span id="r23">Ruta 23</span></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <div id="map"></div>
+  </main>
+  <span id="Contacto"></span>
+
+  <footer  class="pie-pagina">
+    <div class="grupo-1">
+      <div class="box">
+        <figure>
+          <a href="#">
+            <img alt="Logo de Clovedeo" title="Inicio de Página" src="../img/icons/logo.svg">
+          </a>
+        </figure>
+      </div>
+      <div class="box">
+        <h2>Contacto</h2>
+        <p>
+          Correo:
+        </p>
+        <p>
+          <a class="mailto" href="mailto:contacto@clovedeo.com">contacto@clovedeo.com</a>
+        </p>
+
+      </div>
+      <div class="box">
+        <h2>Redes</h2>
+        <div class="red-social">
+          <a href="https://github.com/Clovedeo" class="fa-brands fa-github"></a>
+          <a href="https://www.linkedin.com/in/clovedeo" class="fa-brands fa-linkedin-in"></a>
+          <a href="https://twitter.com/clovedeo" class="fa-brands fa-x-twitter"></a>
+          <a href="https://www.instagram.com/clovedeo/" class="fa fa-instagram"></a>
+          <a href="https://www.facebook.com/clovedeo" class="fa fa-facebook"></a>
+        </div>
+        <h2 class="stores">Play Store</h2>
+        <div class="red-social">
+          <a href="https://play.google.com/store/apps/dev?id=8250347754727888021" class="fa-brands fa-google-play"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grupo-2">
+      <small>&copy; 2025 <b>Clovedeo</b></small>
+    </div>
+  </footer>
+  
+  
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script><script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+  <script type="module">
+
+    // polylines para rutas
+    let polyRB
+    let poly2
+    let poly7
+    let poly8
+    let poly10
+    let poly12
+    let poly14
+    let poly16
+    let poly17
+    let poly18
+    let poly20
+    let poly22
+    let poly23
+    let poly26
+
+    //booleans para rutas
+    let boolRB = false
+    let bool2 = false
+    let bool7 = false
+    let bool8 = false
+    let bool10 = false
+    let bool12 = false
+    let bool14 = false
+    let bool16 = false
+    let bool17 = false
+    let bool18 = false
+    let bool20 = false
+    let bool22 = false
+    let bool23 = false
+    let bool26 = false
+
+    let data;
+    let mapJS = L.map('map').setView([23.7387885, -99.1466166], 12);
+
+    let tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(mapJS);
+
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js'
+    
+    // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js'
+    import { getDatabase, onValue, ref } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js'
+    
+    // Add Firebase products that you want to use
+    import { getAuth } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js'
+    import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js'
+    import { getStorage } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-storage.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCVnmjciwHk4GvGjzzg4uxWwss8s3HZeZ8",
+      authDomain: "rutas-victoria-0.firebaseapp.com",
+      databaseURL: "https://rutas-victoria-0-default-rtdb.firebaseio.com",
+      projectId: "rutas-victoria-0",
+      storageBucket: "rutas-victoria-0.appspot.com",
+      messagingSenderId: "107711688385",
+      appId: "1:107711688385:web:4603ad2f22dbc8ade76e40",
+      measurementId: "G-0BLGHQ9T6H"
+    };
+    
+    const app = initializeApp(firebaseConfig);
+
+    const db = getDatabase()
+
+    try{
+      const distanceRef = ref(db, 'rutasweb')
+      onValue(distanceRef, (snapshot) => {
+        data = snapshot.val()
+        
+        //cargarMapa(data.root)
+        cargarRutas()
+      })
+    } catch (error){
+      console.error(error)
+    }
+    
+
+    function cargarRutas(){
+
+      let arrajson = data.root.features
+
+      arrajson.forEach(element => {
+        let coordinates = []
+
+        element.geometry.coordinates.forEach(arr => {
+          //console.log(arr)
+          let point = new L.LatLng(arr[1], arr[0])
+          coordinates.push(point)
+        }) 
+        let color = element.properties.color
+
+        try {
+          switch(element.id){
+          case '01':
+          polyRB = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          boolRB = true
+            break;
+          case '02':
+          poly8 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool8 = true
+            break;
+          case '03':
+          poly7 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool7 = true
+            break;
+          case '04':
+          poly23 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool23 = true
+            break;
+          case '05':
+          poly22 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool22 = true
+            break;
+          case '06':
+          poly20 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool20 = true
+            break;
+          case '07':
+          poly2 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool2 = true
+            break;
+          case '08':
+          poly18 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool18 = true
+            break;
+          case '09':
+          poly17 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool17 = true
+            break;
+          case '10':
+          poly16 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool16 = true
+            break;
+          case '11':
+          poly14 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool14 = true
+            break;
+          case '12':
+          poly12 = L.polyline(coordinates, {color: color}).addTo(mapJS);
+          bool12 = true
+            break;
+          default:
+            break;
+        }
+        } catch (error) {
+          console.error(error);
+        }
+
+      });
+    }
+    
+
+    function cargarMapa(arrajson){
+      L.geoJSON(arrajson, {
+          style: function (feature) {
+              return {color: feature.properties.color};
+          }
+      }).addTo(mapJS);
+    }
+
+    // EventClicks
+    $('#rb').on('click',() => {
+      if(boolRB){
+        mapJS.removeLayer(polyRB)
+        boolRB = !boolRB
+      } else{
+        mapJS.addLayer(polyRB)
+        boolRB = !boolRB
+      }
+    })
+    $('#r2').on('click',() => {
+      if(bool2){
+        mapJS.removeLayer(poly2)
+        bool2 = !bool2
+      } else{
+        mapJS.addLayer(poly2)
+        bool2 = !bool2
+      }
+    })
+    $('#r7').on('click',() => {
+      if(bool7){
+        mapJS.removeLayer(poly7)
+        bool7 = !bool7
+      } else{
+        mapJS.addLayer(poly7)
+        bool7 = !bool7
+      }
+    })
+    $('#r8').on('click',() => {
+      if(bool8){
+        mapJS.removeLayer(poly8)
+        bool8 = !bool8
+      } else{
+        mapJS.addLayer(poly8)
+        bool8 = !bool8
+      }
+    })
+    $('#r12').on('click',() => {
+      if(bool12){
+        mapJS.removeLayer(poly12)
+        bool12 = !bool12
+      } else{
+        mapJS.addLayer(poly12)
+        bool12 = !bool12
+      }
+    })
+    $('#r14').on('click',() => {
+      if(bool14){
+        mapJS.removeLayer(poly14)
+        bool14 = !bool14
+      } else{
+        mapJS.addLayer(poly14)
+        bool14 = !bool14
+      }
+    })
+    $('#r16').on('click',() => {
+      if(bool16){
+        mapJS.removeLayer(poly16)
+        bool16 = !bool16
+      } else{
+        mapJS.addLayer(poly16)
+        bool16 = !bool16
+      }
+    })
+    $('#r17').on('click',() => {
+      if(bool17){
+        mapJS.removeLayer(poly17)
+        bool17 = !bool17
+      } else{
+        mapJS.addLayer(poly17)
+        bool17 = !bool17
+      }
+    })
+    $('#r18').on('click',() => {
+      if(bool18){
+        mapJS.removeLayer(poly18)
+        bool18 = !bool18
+      } else{
+        mapJS.addLayer(poly18)
+        bool18 = !bool18
+      }
+    })
+    $('#r20').on('click',() => {
+      if(bool20){
+        mapJS.removeLayer(poly20)
+        bool20 = !bool20
+      } else{
+        mapJS.addLayer(poly20)
+        bool20 = !bool20
+      }
+    })
+    $('#r22').on('click',() => {
+      if(bool22){
+        mapJS.removeLayer(poly22)
+        bool22 = !bool22
+      } else{
+        mapJS.addLayer(poly22)
+        bool22 = !bool22
+      }
+    })
+    $('#r23').on('click',() => {
+      if(bool23){
+        mapJS.removeLayer(poly23)
+        bool23 = !bool23
+      } else{
+        mapJS.addLayer(poly23)
+        bool23 = !bool23
+      }
+    })
+  </script>
+
+  <script src="../js/routes.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="../js/code.jquery.com_jquery-3.7.1.js"></script>
+  <script src="https://kit.fontawesome.com/7f3cfea7e3.js" crossorigin="anonymous"></script>
+  <script src="../js/routes.js"></script>
+</body>
+
+</html>

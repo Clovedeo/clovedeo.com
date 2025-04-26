@@ -1,0 +1,97 @@
+nav{
+    position: fixed;
+    overflow-x: hidden;
+    background: #0d2033;
+    height: 80px;
+    width: 100%;
+    z-index: 7;
+
+}
+
+.enlace{
+    position: absolute;
+    padding: 20px 20px;
+}
+
+.logo{
+    height: 40px;
+    width: 40px;
+}
+
+.logo-enlace{
+    float: right;
+    margin-right: 200px;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+    overflow-y: scroll;
+}
+
+nav ul li{
+    display: block;
+    line-height: 30px;
+    margin: 20px 0;
+    overflow: hidden;
+    z-index: 9;
+}
+
+nav ul li span{
+    color: white;
+    font-size: 20px;
+    padding: 7px 13px;
+    border-radius: 10px;
+
+}
+
+li span.active, li span:hover{
+    cursor: pointer;
+    background: #050d15;
+    transition: .5s;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: left;
+    line-height: 80px;
+    margin-left: 40px;
+    cursor: pointer;
+    display: block;
+}
+
+#check{
+    display: none;
+}
+ul{
+    overflow-y:  scroll;
+    position: fixed;
+    width: 20%;
+    height: 800px;
+    background: rgba(5, 13, 21, 0.4);
+    /* background: #050d15; */
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+}
+#check:checked ~ ul{
+    left: 0;
+}
+
+@media (max-width: 858px) {
+
+    
+
+    
+
+
+}
+
+section{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    top: -80px;
+}

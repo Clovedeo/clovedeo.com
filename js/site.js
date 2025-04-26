@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    window.location.replace("https://clovedeo.com/");
+    //window.location.replace("https://clovedeo.com/");
     pantalla()
 })
 
@@ -7,7 +7,6 @@ window.addEventListener('resize', pantalla);
 
 function pantalla(){
     let ancho = document.documentElement.clientWidth;
-    console.log("ANCHO: "+ ancho)
     let circulos = document.querySelectorAll('circle');
     // console.log(circulos)
     if(ancho > 975){
