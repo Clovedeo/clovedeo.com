@@ -14,5 +14,8 @@ a:link {
 nav ul {
     height: 89%;
     width: 350px;
-    overflow:overlay;
+    overflow-y:scroll;
+}
+li:last-child {
+    margin-bottom: 50px;
 }

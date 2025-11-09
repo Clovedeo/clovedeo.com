@@ -7,6 +7,10 @@ nav{
     z-index: 7;
 
 }
+#map { 
+    height: 700px; 
+    z-index: 1; 
+}
 
 .enlace{
     position: absolute;

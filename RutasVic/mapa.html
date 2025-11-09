@@ -2,7 +2,19 @@
 <html lang="es">
 
 <head>
-  <title>Manuel Obregón - Portafolio</title>
+  <title>Rutas de Micro Victoria - Clovedeo</title>
+  
+  
+  <meta property="og:title" content="Rutas de Micro Victoria" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clovedeo.com/RutasVic/" />
+  <meta property="og:description" content="Rutas de Micro en la capital de las flautas de harina." />
+  <meta property="og:site_name" content="Clovedeo" />
+
+  <meta property="og:image" content="https://clovedeo.com/img/proyectos/icon-rutasvic.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Micros Estelares" />
+  
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <link rel="icon" href="../img/icons/favicon.ico" />
@@ -35,7 +47,7 @@
       </a>
     </div>
 
-    <ul>
+    <ul class="listaRutas">
       <li><span id="rVisible">Mostrar Todas Las Rutas</span></li>
       <li><span id="rHidden">Ocultar Todas Las Rutas</span></li>
       <li><span id="rb">Ruta del Bienestar</span></li>
@@ -105,6 +117,17 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
   crossorigin=""></script>
+  <script>
+    window.addEventListener('load', function() {
+       const links = document.querySelectorAll('link[rel="stylesheet"]')
+       const timestamp = new Date().getTime()
+       
+       links.forEach(link => {
+           const href = link.getAttribute('href')
+           link.setAttribute('href', href + '?v=' + timestamp)
+       })
+    });
+  </script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
